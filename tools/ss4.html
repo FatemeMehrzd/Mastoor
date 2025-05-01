@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ss4.css">
+    <title>Mastor</title>
+</head>
+<body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+          <a href="#" id="rokhdad-link">
+            <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span>
+            <span class="icon-text">رخدادها</span>
+        </a>
+        <div class="submenu" id="rokhdad-submenu">
+            <a href="ss5.html" class="submenu-item" data-type="خطاها">
+                <span class="circle"></span> خطاها
+            </a>
+            <a href="ss51.html" class="submenu-item" data-type="ترافیک سیستم">
+                <span class="circle"></span> ترافیک سیستم
+            </a>
+            <a href="ss52.html" class="submenu-item" data-type="امنیتی">
+                <span class="circle"></span> امنیتی
+            </a>
+        </div>
+
+        </div>
+        <div id="main">
+          </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+        <div class="left">
+            <div class="b1">
+              <div class="b11">
+                <span title="جستجو کردن"
+                  ><div class="b111"><img src="search.png" alt="" /></div
+                ></span>
+                <div class="b112">
+                  <form id="form">
+                    <input
+                      type="search"
+                      id="query"
+                      name="q"
+                      placeholder="جستجو کن...."
+                      &gt;
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="b12">
+                <div class="b121">
+                 <span title="خروج"> <img src="exit.png" alt="" />
+                  <div id="exit-modal" class="modal"></span>
+                    <div id="modal-content">
+                      <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                      <button id="confirm-exit">بله</button>
+                      <button id="cancel-exit">خیر</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="b122">
+                 <span title="اعلان ها"> <img src="notifications.png" alt="" />
+                  <div id="notification-popup" class="notification-modal"></span>
+                    <div class="notification-content">
+                      <h3>اعلان‌ها</h3>
+                      <ul id="notifications-list">
+                        <li>اعلان شماره ۱</li>
+                        <li>هاست شما تغییر کرد</li>
+                        <li>اعلان شماره ۳</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="left-area">
+              <div class="left-area__box"><h3 class="left-area__text">محدودیت IP</h3><button class="left-area__button">کلیک کنید</button></div>
+              <div class="left-area__box"><h3 class="left-area__text">مشاهده لیست سیاه</h3><button class="left-area__button">کلیک کنید</button></div>
+              <div class="left-area__box"><h3 class="left-area__text">محدودیت لینک ها</h3><button class="left-area__button">کلیک کنید</button></div>
+              <div class="left-area__box"><h3 class="left-area__text">مدیریت دسترسی</h3><button class="left-area__button">کلیک کنید</button></div>
+              <div class="left-area__box"><h3 class="left-area__text">مدیریت فایل ها</h3><button class="left-area__button">کلیک کنید</button></div>
+              <div class="left-area__box"><h3 class="left-area__text">قوانین</h3><button class="left-area__button">کلیک کنید</button></div>
+            </section>
+            <script src="ss4.js"></script>
+            </body>

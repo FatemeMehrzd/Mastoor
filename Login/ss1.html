@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="ss1.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="formbox">
+      <h1>Login</h1>
+      <div class="b1">
+        <h2>نام کاربری:</h2>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="" />
+      </div>
+      <div class="b1">
+        <h2>رمز عبور:</h2>
+      </div>
+      <div class="password">
+        <input type="password" id="password" placeholder="" />
+        <img src="hide.png" id="togglePassword" alt="Show/Hide Password" />
+      </div>
+
+      <div class="b2">
+        <label class="checkbox-label">
+          <input type="checkbox" class="custom-checkbox" />
+          به خاطر بسپار
+        </label>
+      </div>
+      <button type="submit" class="b3" onclick="submitForm()">
+        <span class="b31">
+          <strong>ورود</strong>
+        </span>
+      </button>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        // هنگام بارگذاری صفحه رمز به صورت مخفی است و عکس hide نمایش داده می‌شود
+        passwordInput.setAttribute("type", "password");
+        togglePassword.src = "hide.png";
+
+        togglePassword.addEventListener("click", function () {
+          const type =
+            passwordInput.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          passwordInput.setAttribute("type", type);
+
+          // تغییر تصویر بر اساس وضعیت
+          this.src = type === "password" ? "hide.png" : "eye.png";
+        });
+      });
+
+      function submitForm() {
+        const username = document.querySelector(".input-box input").value;
+        const password = document.getElementById("password").value;
+
+        if (!username || !password) {
+          return;
+        }
+
+        // فرض کنید اعتبارسنجی پیچیده‌تری انجام شده است
+        window.location.href = "https://www.google.com";
+      }
+    </script>
+  </body>
+</html>

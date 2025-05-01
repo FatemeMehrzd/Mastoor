@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ss42.css">
+    <title>Mastor</title>
+</head>
+<body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+          <a href="#" id="rokhdad-link">
+            <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span>
+            <span class="icon-text">رخدادها</span>
+        </a>
+        <div class="submenu" id="rokhdad-submenu">
+            <a href="ss5.html" class="submenu-item" data-type="خطاها">
+                <span class="circle"></span> خطاها
+            </a>
+            <a href="ss51.html" class="submenu-item" data-type="ترافیک سیستم">
+                <span class="circle"></span> ترافیک سیستم
+            </a>
+            <a href="ss52.html" class="submenu-item" data-type="امنیتی">
+                <span class="circle"></span> امنیتی
+            </a>
+        </div>
+
+        </div>
+        <div id="main">
+          </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+        <div class="left">
+            <div class="b1">
+              <div class="b11">
+                <span title="جستجو کردن"
+                  ><div class="b111"><img src="search.png" alt="" /></div
+                ></span>
+                <div class="b112">
+                  <form id="form">
+                    <input
+                      type="search"
+                      id="query"
+                      name="q"
+                      placeholder="جستجو کن...."
+                      &gt;
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="b12">
+                <div class="b121">
+                 <span title="خروج"> <img src="exit.png" alt="" />
+                  <div id="exit-modal" class="modal"></span>
+                    <div id="modal-content">
+                      <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                      <button id="confirm-exit">بله</button>
+                      <button id="cancel-exit">خیر</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="b122">
+                 <span title="اعلان ها"> <img src="notifications.png" alt="" />
+                  <div id="notification-popup" class="notification-modal"></span>
+                    <div class="notification-content">
+                      <h3>اعلان‌ها</h3>
+                      <ul id="notifications-list">
+                        <li>اعلان شماره ۱</li>
+                        <li>هاست شما تغییر کرد</li>
+                        <li>اعلان شماره ۳</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="left-area">
+              <div class="left-area__1st">
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">محدودیت IP</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مشاهده لیست سیاه</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">محدودیت لینک ها</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مدیریت دسترسی</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مدیریت فایل ها</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">قوانین</h3>
+                    <div class="dropdownn">
+                      <button class="dropbtnn" onclick="toggleDropdownn()">
+                          <span class="arrow"></span>
+                          کلیک کنید
+                      </button>
+                      <div class="dropdownn-content" id="dropdownnMenu">
+                          <a href="#" onclick="openPopup()">لیست قوانین</a>
+                          <a href="#" onclick="openPopup()">قوانین در حال اجرا</a>
+                          <a href="#" onclick="openPopup()">ایجاد قوانین جدید</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="left-area__2nd">
+                <div class="left-area__2nd__part1">
+                  <div class="left-area__2nd__part11">
+                    <h3 class="left-area__2nd__part11__text">اسم آیپی</h3>
+                    <div class="left-area__2nd__part11__box"><input type="text" id="customerName" class="box__right__input" placeholder="هاست"></div>
+                  </div>
+                  <div class="left-area__2nd__part12">
+                    <button class="left-area__2nd__part11__button"><a href="ss41.html">انصراف</a></button>
+                    <button class="left-area__2nd__part11__button">تایید</button>
+                  </div>
+                </div>
+                <div class="left-area__2nd__part2">
+                  <div class="left-area__2nd__part21">
+                    <h3 class="left-area__2nd__part21__text">یادداشت</h3>
+                    <div class="left-area__2nd__part21__box"><input type="text" id="customerName" class="box__right__input" placeholder=""></div>
+                  </div>
+                </div>
+                <div class="left-area__2nd__part3">
+                  <h3 class="left-area__2nd__part3__text">نوع محدودیت</h3>
+                  <div class="left-area__2nd__part3__box"><input type="text" id="txtbrowsers" class="box__right__input" placeholder=""list= "browsers"/>
+                    <datalist id="browsers">
+                      <option value="6ne"></option>
+                </datalist></div>
+                  <div class="left-area__2nd__part3__box"><input type="text" id="txtbrowsers" class="box__right__input" placeholder=""list= "browsers"/>
+                    <datalist id="browsers">
+                      <option value="6ne"></option>
+                </datalist></div>
+                  <div class="left-area__2nd__part3__box"><input type="text" id="txtbrowsers" class="box__right__input" placeholder=""list= "browsers"/>
+                    <datalist id="browsers">
+                      <option value="6ne"></option>
+                </datalist></div>
+                </div>
+                <div class="left-area__2nd__part4">
+                  <h3 class="left-area__2nd__part4__text">پورت</h3>
+                  <div class="left-area__2nd__part4__box"><input type="number" id="number" class="box__right__input" placeholder=""></div>
+                </div>
+                <div class="left-area__2nd__part5">
+                  <h3 class="left-area__2nd__part5__text">محدوده آیپی خارجی</h3>
+                  <div class="left-area__2nd__part5__box"><input type="text" id="customerName" class="box__right__input" placeholder=""></div>
+                  <div class="left-area__2nd__part5__box"><input type="text" id="customerName" class="box__right__input" placeholder=""></div>
+                </div>
+              </div>
+            </section>
+            <script src="ss42.js"></script>
+</body>

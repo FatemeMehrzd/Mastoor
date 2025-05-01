@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ss45.css">
+    <title>Mastor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+          <a href="#" id="rokhdad-link">
+            <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span>
+            <span class="icon-text">رخدادها</span>
+        </a>
+        <div class="submenu" id="rokhdad-submenu">
+            <a href="ss5.html" class="submenu-item" data-type="خطاها">
+                <span class="circle"></span> خطاها
+            </a>
+            <a href="ss51.html" class="submenu-item" data-type="ترافیک سیستم">
+                <span class="circle"></span> ترافیک سیستم
+            </a>
+            <a href="ss52.html" class="submenu-item" data-type="امنیتی">
+                <span class="circle"></span> امنیتی
+            </a>
+        </div>
+
+        </div>
+        <div id="main">
+          </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+        <div class="left">
+            <div class="b1">
+              <div class="b11">
+                <span title="جستجو کردن"
+                  ><div class="b111"><img src="search.png" alt="" /></div
+                ></span>
+                <div class="b112">
+                  <form id="form">
+                    <input
+                      type="search"
+                      id="query"
+                      name="q"
+                      placeholder="جستجو کن...."
+                      &gt;
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="b12">
+                <div class="b121">
+                 <span title="خروج"> <img src="exit.png" alt="" />
+                  <div id="exit-modal" class="modal"></span>
+                    <div id="modal-content">
+                      <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                      <button id="confirm-exit">بله</button>
+                      <button id="cancel-exit">خیر</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="b122">
+                 <span title="اعلان ها"> <img src="notifications.png" alt="" />
+                  <div id="notification-popup" class="notification-modal"></span>
+                    <div class="notification-content">
+                      <h3>اعلان‌ها</h3>
+                      <ul id="notifications-list">
+                        <li>اعلان شماره ۱</li>
+                        <li>هاست شما تغییر کرد</li>
+                        <li>اعلان شماره ۳</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="left-area">
+              <div class="left-area__1st">
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">محدودیت IP</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مشاهده لیست سیاه</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">محدودیت لینک ها</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مدیریت دسترسی</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مدیریت فایل ها</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">قوانین</h3>
+                    <div class="dropdownn">
+                      <button class="dropbtnn" onclick="toggleDropdownn()">
+                          <span class="arrow"></span>
+                          کلیک کنید
+                      </button>
+                      <div class="dropdownn-content" id="dropdownnMenu">
+                          <a href="#" onclick="openPopup()">لیست قوانین</a>
+                          <a href="#" onclick="openPopup()">قوانین در حال اجرا</a>
+                          <a href="#" onclick="openPopup()">ایجاد قوانین جدید</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="left-area__2nd">
+                <div class="left-area__2nd">
+                  <div class="left-area__2nd__Rbox">
+                      <button class="left-area__2nd__Rbox__button" onclick="openModal()">
+                          <img src="person.png" alt="" class="left-area__2nd__Rbox__button__img1">ایجاد ادمین
+                      </button>
+                      <div id="hostModal" class="modal">
+                          <div class="modal-content">
+                            <div class="modal-content__header">
+                              <h2 class="modal-content__header-text">اطلاعات ادمین</h2>
+                              <span title="بستن"><span class="close" onclick="closeModal()">&times;</span></span>
+                            </div>
+                              <div class="form-container">
+                                  <div class="form-row">
+                                      <label for="username">نام کاربری:</label>
+                                      <input type="text" id="username" placeholder="">
+                                  </div>
+                                  <div class="form-row">
+                                      <label for="name">نام:</label>
+                                      <input type="text" id="name" placeholder="">
+                                  </div>
+                                  <div class="form-row">
+                                      <label for="lastname">نام خانوادگی:</label>
+                                      <input type="text" id="lastname" placeholder="">
+                                  </div>
+                                  <div class="form-row">
+                                      <label for="password">رمز عبور:</label>
+                                      <input type="password" id="password" placeholder="">
+                                  </div>
+                                  <div class="form-row">
+                                      <label for="phone">شماره همراه:</label>
+                                      <input type="tel" id="phone" placeholder="">
+                                  </div>
+                              </div>
+                              <div class="modal-buttons">
+                                  <button onclick="submitForm()">تایید</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="left-area__2nd__Lbox">
+                  <button class="left-area__2nd__Lbox__button" onclick="exportTableToExcel('table')"><img src="output1.png" alt="" class="left-area__2nd__Lbox__button__img">خروجی</button>
+                </div>
+                </div>
+                <div class="left-area__3rd">
+                  <div class="table-container">
+                      <table id="table">
+                          <thead>
+                              <tr class="oneline">
+                                  <th>شماره</th>
+                                  <th>نام نام خانوادگی</th>
+                                  <th>آدرس آیپی</th>
+                                  <th>ایجاد کننده</th>
+                                  <th>حذف</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr><td>1</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>2</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>3</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>4</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>5</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>6</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>7</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>8</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>9</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>10</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>11</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>12</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>13</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                              <tr><td>14</td><td></td><td></td><td></td><td><button class="deletee"><img src="trash.png" alt=""></button></td></tr>
+                          </tbody>
+                      </table>
+                  </div>
+                </div>
+            </section>
+            <script src="ss45.js"></script>
+</body>

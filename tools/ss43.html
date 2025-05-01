@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ss43.css">
+    <title>Mastor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+          <a href="#" id="rokhdad-link">
+            <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span>
+            <span class="icon-text">رخدادها</span>
+        </a>
+        <div class="submenu" id="rokhdad-submenu">
+            <a href="ss5.html" class="submenu-item" data-type="خطاها">
+                <span class="circle"></span> خطاها
+            </a>
+            <a href="ss51.html" class="submenu-item" data-type="ترافیک سیستم">
+                <span class="circle"></span> ترافیک سیستم
+            </a>
+            <a href="ss52.html" class="submenu-item" data-type="امنیتی">
+                <span class="circle"></span> امنیتی
+            </a>
+        </div>
+
+        </div>
+        <div id="main">
+          </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+        <div class="left">
+            <div class="b1">
+              <div class="b11">
+                <span title="جستجو کردن"
+                  ><div class="b111"><img src="search.png" alt="" /></div
+                ></span>
+                <div class="b112">
+                  <form id="form">
+                    <input
+                      type="search"
+                      id="query"
+                      name="q"
+                      placeholder="جستجو کن...."
+                      &gt;
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="b12">
+                <div class="b121">
+                 <span title="خروج"> <img src="exit.png" alt="" />
+                  <div id="exit-modal" class="modal"></span>
+                    <div id="modal-content">
+                      <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                      <button id="confirm-exit">بله</button>
+                      <button id="cancel-exit">خیر</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="b122">
+                 <span title="اعلان ها"> <img src="notifications.png" alt="" />
+                  <div id="notification-popup" class="notification-modal"></span>
+                    <div class="notification-content">
+                      <h3>اعلان‌ها</h3>
+                      <ul id="notifications-list">
+                        <li>اعلان شماره ۱</li>
+                        <li>هاست شما تغییر کرد</li>
+                        <li>اعلان شماره ۳</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="left-area">
+              <div class="left-area__1st">
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">محدودیت IP</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مشاهده لیست سیاه</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">محدودیت لینک ها</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مدیریت دسترسی</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">مدیریت فایل ها</h3>
+                  <div class="left-area__12st"><button class="left-area__1st-box__button">کلیک کنید</button></div>
+                </div>
+                <div class="left-area__1st-box">
+                  <h3 class="left-area__1st-text">قوانین</h3>
+                    <div class="dropdownn">
+                      <button class="dropbtnn" onclick="toggleDropdownn()">
+                          <span class="arrow"></span>
+                          کلیک کنید
+                      </button>
+                      <div class="dropdownn-content" id="dropdownnMenu">
+                          <a href="" onclick="openPopup()">لیست قوانین</a>
+                          <a href="" onclick="openPopup()">قوانین در حال اجرا</a>
+                          <a href="" onclick="openPopup()">ایجاد قوانین جدید</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <section class="black-list">
+                <div class="header"><h3 class="header-text">لیست  سیاه</h3></div>
+                <div class="second">
+                  <div class="second--Rbox">
+                    <div class="dropdown">
+                      <button class="dropbtn" onclick="toggleDropdown()">
+                          ایجاد کردن
+                          <div class="separator"></div>
+                          <span class="arrow">▼</span>
+                      </button>
+                      <div class="dropdown-content" id="dropdownMenu">
+                          <a href="#" onclick="openPopup()">ایجاد آدرس جدید</a>
+                          <a href="#" onclick="openPopup()">اضافه کردن آیپی</a>
+                      </div>
+                    </div>
+                  <div id="popup" class="popup">
+                      <div class="popup-content">
+                        <div class="modal-content__header">
+                          <h2 class="modal-content__header-text">اضافه کردن لیست آدرس آیپی</h2>
+                          <div class="modal-content__header-button"><span title="بسته شدن پنجره"><span class="close" onclick="closePopup()">&times;</span></span></div>
+                        </div>
+                        <div class="popup-content__2nd">
+                          <h2 class="expired-date">زمان انقضا</h2>
+                          <div class="popup-content__2nd__input"><label><input type="radio" name="expire" checked> برای همیشه</label></div>
+                          <div class="popup-content__2nd__input"><label><input type="radio" name="expire"> رفع انسداد (روزها)</label>
+                          <input type="text" placeholder="مدت زمان رفع انسداد"></div>
+                          <div class="popup-content__check-box ">
+                          <label><input type="checkbox">آدرس آیپی موجود را در لیست ،مسدود و لیست مجاز را باز نویسی کنید.</label></div>
+                        </div>
+                        <div class="popup-content__3rd">
+                          <h3 class="popup-content__3rd__text">فایل:</h3>
+                          <div class="popup-content__3rd__button">
+                            <div class="popup-wrapper">
+                              <div class="popup-content__3rd__button">
+                                <input type="file" class="browse-input" id="upload--btn">
+                                <label for="upload--btn" class="upload-label">ایجاد فایل</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="popup-content__4th">
+                          <h3 class="popup-content__4th__text">آدرس آیپی‌های مسدود شده</h3>
+                          <div class="popup-list">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="popup-content__5th">
+                          <span title="بسته شدن"><button onclick="closePopup()">بستن</button></span>
+                          <span title="تایید کردن"><button onclick="closePopup()">تایید</button></span>
+                        </div>
+                      </div>
+                  </div>
+                    <button class="second--Rbox___Lbutton">گزارش گیری</button>
+                  </div>
+                  <div class="second--Lbox">
+                    <button class="second--Lbox__button"><img src="output1.png" alt="" onclick="exportTableToExcel('table')">خروجی</button>
+                  </div>
+                </div>
+                <div class="table" id="table">
+                  <div class="table-container">
+                      <table>
+                          <thead>
+                              <tr class="oneline">
+                                  <th>آدرس آیپی های مسدود شده</th>
+                                  <th>زمان مسدود شده</th>
+                                  <th>زمان انقضا</th>
+                                  <th>مکان</th>
+                                  <th>کاربر</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>92.188.123.08</td>
+                                  <td>1402.06.25<br>16:29:01</td>
+                                  <td>برای همیشه</td>
+                                  <td>آلمان</td>
+                                  <td>ادمین</td>
+                                  <td><span title="تایید کردن"><button style="background: none; border: none;"><img src="Ok.png" alt=""></button></span><span title="حذف کردن"><button style="background: none; border: none;"><img src="trash.png" alt=""></button></span></td>
+                              </tr>
+                              <tr>
+                                  <td>90.123.123.08</td>
+                                  <td>1402.06.25<br>16:29:01</td>
+                                  <td>برای همیشه</td>
+                                  <td>امارات</td>
+                                  <td>ادمین</td>
+                                  <td><span title="تایید کردن"><button style="background: none; border: none;"><img src="Ok.png" alt=""></button></span><span title="حذف کردن"><button style="background: none; border: none;"><img src="trash.png" alt=""></button></span></td>
+                              </tr>
+                              <tr>
+                                  <td>92.188.123.08</td>
+                                  <td>1402.06.25<br>16:29:01</td>
+                                  <td>برای همیشه</td>
+                                  <td>ایران</td>
+                                  <td>ادمین</td>
+                                  <td><span title="تایید کردن"><button style="background: none; border: none;"><img src="Ok.png" alt=""></button></span><span title="حذف کردن"><button style="background: none; border: none;"><img src="trash.png" alt=""></button></span></td>
+                              </tr>
+                              <tr>
+                                  <td>92.18.12.28</td>
+                                  <td>1402.06.25<br>16:29:01</td>
+                                  <td>برای همیشه</td>
+                                  <td>روسیه</td>
+                                  <td>ادمین</td>
+                                  <td><span title="تایید کردن"><button style="background: none; border: none;"><img src="Ok.png" alt=""></button></span><span title="حذف کردن"><button style="background: none; border: none;"><img src="trash.png" alt=""></button></span></td>
+                              </tr>
+                              <tr>
+                                  <td>93.185.12.18</td>
+                                  <td>1402.06.25<br>16:29:01</td>
+                                  <td>برای همیشه</td>
+                                  <td>کانادا</td>
+                                  <td>ادمین</td>
+                                  <td><span title="تایید کردن"><button style="background: none; border: none;"><img src="Ok.png" alt=""></button></span><span title="حذف کردن"><button style="background: none; border: none;"><img src="trash.png" alt=""></button></span></td>
+                              </tr>
+                              <tr>
+                                  <td>92.180.123.08</td>
+                                  <td>1402.06.25<br>16:29:01</td>
+                                  <td>برای همیشه</td>
+                                  <td>آمریکا</td>
+                                  <td>ادمین</td>
+                                  <td><span title="تایید کردن"><button style="background: none; border: none;"><img src="Ok.png" alt=""></button></span><span title="حذف کردن"><button style="background: none; border: none;"><img src="trash.png" alt=""></button></span></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                </div>
+                <div class="b4th" id="pagination">
+                    <div class="items-per-page">
+                       <span title="تازه سازی"><span class="refresh-icon" onclick="refreshData()">↻</span></span>
+                        <span class="items-count">100 مورد</span>
+                    </div>
+                    <div class="pagination-container">
+                        <button class="pagination-button active" onclick="openPage(1)">1</button>
+                        <button class="pagination-button" onclick="openPage(2)">2</button>
+                        <button class="pagination-button" onclick="openPage(3)">3</button>
+                        <button class="pagination-button" onclick="openPage(4)">4</button>
+                        <button class="pagination-button" onclick="nextPage()">بعدی >></button>
+                    </div>
+                    <button class="b4th-button"><h3>بستن</h3></button>
+                </div>
+              </section>
+            <script src="ss43.js"></script>
+            </body>

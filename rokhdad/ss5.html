@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ss5.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <title>Mastor</title>
+</head>
+<body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+          <a href="#" id="rokhdad-link">
+            <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span>
+            <span class="icon-text">رخدادها</span>
+        </a>
+        <div class="submenu" id="rokhdad-submenu">
+            <a href="ss5.html" class="submenu-item" data-type="خطاها">
+                <span class="circle"></span> خطاها
+            </a>
+            <a href="ss51.html" class="submenu-item" data-type="ترافیک سیستم">
+                <span class="circle"></span> ترافیک سیستم
+            </a>
+            <a href="ss52.html" class="submenu-item" data-type="امنیتی">
+                <span class="circle"></span> امنیتی
+            </a>
+        </div>
+        </div>
+        <div id="main">
+          </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+        <div class="left">
+            <div class="b1">
+              <div class="b11">
+                <span title="جستجو کردن"
+                  ><div class="b111"><img src="search.png" alt="" /></div
+                ></span>
+                <div class="b112">
+                  <form id="form">
+                    <input
+                      type="search"
+                      id="query"
+                      name="q"
+                      placeholder="جستجو کن...."
+                      &gt;
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="b12">
+                <div class="b121">
+                 <span title="خروج"> <img src="exit.png" alt="" />
+                  <div id="exit-modal" class="modal"></span>
+                    <div id="modal-content">
+                      <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                      <button id="confirm-exit">بله</button>
+                      <button id="cancel-exit">خیر</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="b122">
+                 <span title="اعلان ها"> <img src="notifications.png" alt="" />
+                  <div id="notification-popup" class="notification-modal"></span>
+                    <div class="notification-content">
+                      <h3>اعلان‌ها</h3>
+                      <ul id="notifications-list">
+                        <li>اعلان شماره ۱</li>
+                        <li>هاست شما تغییر کرد</li>
+                        <li>اعلان شماره ۳</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="b2">
+              <div class="b21">
+                  <span title="تازه سازی"><button class="b2-button"><img src="Refresh.png" alt="" class="b2-button__icon2">تازه سازی</button></span>
+                </div>
+                <div class="b22">
+                 <span title="بازگشت"><button class="b2-button"><img src="Back.png" alt="" class="b2-button__icon3">بازگشت</button></span>
+                 <span title="خروجی"><button class="b2-button" onclick="exportTableToExcel('table')"><img src="Output.png" alt="" class="b2-button__icon4">خروجی</button></span>
+                </div>
+            </div>
+            <div class="b3">
+                <div class="table-container">
+                    <table id="table">
+                        <thead>
+                            <tr class="oneline">
+                                <th>شماره</th>
+                                <th>روز</th>
+                                <th>زمان</th>
+                                <th>کد خطا</th>
+                                <th>توضیحات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>6</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>7</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>8</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>9</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>10</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>11</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>12</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>13</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>14</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <script src="ss5.js"></script>
+</body>
+</html>
