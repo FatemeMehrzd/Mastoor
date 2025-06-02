@@ -1,0 +1,1066 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #7e95df;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+body {
+  background-color: #5f5be0;
+}
+.Main {
+  width: 100%;
+  display: flex;
+  direction: rtl;
+}
+.sidebar {
+  height: 100vh; /* ارتفاع کامل صفحه */
+  width: 200px; /* عرض سایدبار */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding-top: 100px;
+  border-radius: 5px;
+  direction: rtl;
+  overflow-x: hidden;
+  transition: 0.5s;
+  white-space: nowrap;
+  font-family: "dana";
+  font-weight: bold;
+}
+
+.sidebar a {
+  padding: 10px 16px; /* تغییر padding */
+  text-decoration: none;
+  font-size: 20px; /* تغییر اندازه فونت */
+  color: #9351cc;
+  display: flex; /* استفاده از flexbox */
+  align-items: center; /* هم‌راستایی عمودی */
+  transition: color 0.3s; /* تغییر رنگ با انیمیشن */
+}
+
+.sidebar a img {
+  width: 38px; /* اندازه آیکون */
+  height: auto; /* حفظ تناسب */
+  margin-left: 15px; /* فاصله بین آیکون و متن */
+  transition: filter 0.3s; /* انیمیشن برای تغییر رنگ آیکون */
+  margin-top: 6px;
+}
+.sidebar a:hover {
+  background-color: #d4d4d4; /* تغییر رنگ متن در حالت hover */
+  border-radius: 15px;
+  color: #000;
+}
+
+.sidebar a:hover img {
+  filter: brightness(10) invert(20); /* تغییر رنگ آیکون در حالت hover */
+}
+
+#main {
+  transition: margin-right 0.5s;
+  padding: 16px;
+  margin-right: 20px; /* فاصله از سایدبار */
+  flex-grow: 1; /* پر کردن فضای باقی‌مانده */
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px; /* تغییر اندازه فونت در حالت موبایل */
+  }
+}
+
+.submenu-item {
+  padding: 8px 12px; /* کاهش padding */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+  font-size: 14px; /* کاهش اندازه فونت */
+}
+
+.submenu-item:hover {
+  background-color: #f1f1f1;
+}
+
+.circle {
+  width: 8px; /* کاهش اندازه دایره */
+  height: 8px; /* کاهش اندازه دایره */
+  border-radius: 50%;
+  background-color: #9351cc;
+  margin-right: 6px; /* کاهش فاصله از متن */
+}
+.left {
+  height: 670px;
+  width: 1180px;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding-left: 100px;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+}
+.b1 {
+  height: 50px;
+  margin: 0px auto;
+  display: flex;
+  direction: rtl;
+}
+.b11 {
+  width: 50%;
+  display: flex;
+  direction: rtl;
+}
+.b111 {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  background-color: #fff;
+  margin: 5px;
+  box-shadow: 3px 3px #00000020;
+  grid-column: 1;
+}
+.b111:hover {
+  content: "جستجو کن";
+  height: 37px;
+  width: 37px;
+}
+.b111 img {
+  height: 22px;
+  width: 22px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.b111:active {
+  background-color: #ccc;
+}
+.b111:hover img {
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.b111:visited {
+  background-color: #d4d4d4;
+}
+.b112 {
+  height: 35px;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 5px;
+  box-shadow: 3px 3px #00000020;
+  display: none;
+  transition: opacity 0.8s ease-in-out;
+  overflow: hidden;
+  opacity: 0;
+  grid-column: 2;
+}
+.b112:visited {
+  background-color: palegoldenrod;
+}
+.b112.active {
+  display: block;
+  opacity: 1;
+}
+.b112 form {
+  margin: 6.5px;
+}
+.b112 form input {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: "dana";
+  font-weight: bold;
+}
+.b12 {
+  width: 50%;
+  display: flex;
+  direction: ltr;
+}
+.b121 {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  background-color: #fff;
+  margin: 5px;
+  box-shadow: 3px 3px #00000020;
+}
+.modalll {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.25); /* نیمه شفاف سفید */
+  backdrop-filter: blur(2px); /* افکت بلور */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalll[style*="display: flex"] {
+  display: flex !important;
+}
+
+#modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+#modal-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "dana";
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#confirm-exit {
+  background-color: #9351cc;
+  color: white;
+}
+
+#confirm-exit:hover {
+  background-color: #a366d9;
+  transform: scale(1.05);
+}
+
+#cancel-exit {
+  background-color: #9351cc;
+  color: white;
+}
+
+#cancel-exit:hover {
+  background-color: #a366d9;
+  transform: scale(1.05);
+}
+
+#modal-content p {
+  font-family: "dana";
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #9351cc;
+}
+
+.b121 img {
+  height: 25px;
+  width: 25px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.b121:hover {
+  width: 37px;
+  height: 37px;
+}
+.b121:hover img {
+  height: 27px;
+  width: 27px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.b121:active {
+  background-color: #ccc;
+}
+.b122 {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  background-color: #fff;
+  margin: 5px;
+  box-shadow: 3px 3px #00000020;
+}
+.b122 img {
+  height: 25px;
+  width: 25px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.notification-modal {
+  display: none;
+  position: relative;
+  top: 50px;
+  right: 0;
+  width: 300px;
+  background: #9351cc;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.notification-content {
+  padding: 15px;
+  text-align: right;
+}
+
+.notification-content h3 {
+  margin-bottom: 10px;
+  font-family: "dana";
+  font-weight: bold;
+}
+
+.notification-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-content ul li {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: "dana";
+  margin: 30px auto;
+}
+
+.notification-content ul li:last-child {
+  border-bottom: none;
+}
+
+.b122 {
+  position: relative;
+}
+
+.notification-modal.active {
+  display: block;
+}
+
+.b122:hover {
+  width: 37px;
+  height: 37px;
+}
+.b122:hover img {
+  height: 27px;
+  width: 27px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.b122:active {
+  background-color: #ccc;
+}
+
+.b2 {
+  width: 100%;
+  height: 400px;
+  font-family: "dana";
+}
+
+.table-container {
+  height: 400px;
+  overflow-y: auto;
+  border-radius: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  font-size: medium;
+}
+table thead {
+  width: 95%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-weight: bold;
+}
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #9351cc;
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background: #d4d4d4;
+}
+
+tr:hover {
+  background: #ddd;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9351cc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7a3e99;
+}
+
+.b3 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 13px;
+}
+.b31 {
+  width: 430px;
+  height: 200px;
+  background-color: #fff;
+  margin-left: 8px;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  font-family: "dana";
+  color: #8f5abc;
+  font-weight: bold;
+  font-size: 22px;
+}
+.b31:hover {
+  width: 431px;
+  height: 201px;
+  transition: 0.5s ease;
+  margin-bottom: 1px;
+}
+.b31__button {
+  width: 150px;
+  height: 45px;
+  background-color: #9351cc;
+  border-radius: 20px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.144);
+  text-align: center;
+  font-family: "dana";
+  color: #fff;
+  margin-right: 110px;
+  margin-top: 45px;
+  border-color: #9351cc;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.b31__button:hover {
+  background-color: #a366d9;
+  transform: scale(1.05);
+  box-shadow: 0 5px 10px rgba(147, 81, 204, 0.3);
+}
+
+.b31__button:active {
+  transform: scale(0.98);
+}
+
+.b31__button-text {
+  margin-top: 2px;
+  font-size: 22px;
+}
+
+.b31:first-child {
+  margin-left: 0 0 0;
+}
+.b311 {
+  font-family: "dana";
+  font-size: medium;
+  font-weight: normal;
+  color: #3e3b3b;
+  text-align: right;
+  margin-right: 5px;
+  margin-top: 32px;
+}
+.modal {
+  height: auto; /* Adjust height based on content */
+  width: 800px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #9351cc;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: "dana";
+  font-weight: bold;
+  font-size: large;
+  z-index: 1000; /* Ensure modal is on top */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between sections */
+}
+
+.modal-inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 10px; /* افزایش فاصله عمودی بین ردیف‌ها به 25px و فاصله افقی بین ستون‌ها به 15px */
+}
+
+.input-box {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.input-box input[type="text"],
+.input-box input[type="number"],
+.input-box input[type="url"],
+.input-box select {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: "dana";
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+.input-box select {
+  cursor: pointer;
+}
+
+.input-box .rmdp-container {
+  width: 100%; /* Make date picker container fill the box */
+}
+
+.input-box .rmdp-input {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: "dana";
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+.select-box {
+  padding: 0 10px; /* Adjust padding for select */
+}
+
+.box4th {
+  margin-top: 10px; /* Adjust margin */
+  display: flex;
+  justify-content: center;
+}
+
+.box4th button {
+  width: 190px;
+  height: 60px;
+  background-color: #fff;
+  color: #090505;
+  border: none;
+  border-radius: 10em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: larger; /* Adjust font size */
+  font-family: "dana"; /* Ensure font family */
+  font-weight: bold; /* Ensure font weight */
+}
+
+.box4th button:hover {
+  background-color: #f0f0f0; /* Slightly lighter on hover */
+}
+
+/* Adjust existing modal styles as needed */
+.modal-content__header {
+  color: #fff;
+  border-bottom: solid 1px #fff;
+  height: 30px;
+  display: flex;
+  justify-content: space-between; /* Space out header and close button */
+  align-items: center;
+}
+
+.close {
+  position: static; /* Remove absolute positioning */
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  margin-right: 780px;
+  margin-top: 5px;
+}
+
+.close::before,
+.close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 18px;
+  height: 2px;
+  background-color: #666;
+}
+
+.close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.modal-content__header-text {
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+.modal-content button {
+  display: block;
+  height: 70px;
+  width: 30%;
+  padding: 10px;
+  background: #fff;
+  color: #7f7f7f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "dana";
+  font-weight: bold;
+}
+.box1st {
+  height: 100px;
+  display: flex;
+  direction: rtl;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+.box1st input,
+.box2nd input,
+.box4th input {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: "dana";
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+}
+.box2nd {
+  height: 100px;
+  display: flex;
+  direction: rtl;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+.box4th {
+  margin-top: 2.5em;
+  display: flex;
+  direction: ltr; /* جهت متن */
+  justify-content: center; /* مرکز کردن محتوا */
+}
+.box4th button {
+  width: 190px;
+  height: 60px;
+  background-color: #fff;
+  color: #090505;
+  border: none; /* حذف حاشیه */
+  border-radius: 10em;
+  cursor: pointer; /* نشانگر ماوس */
+  transition: background-color 0.3s;
+}
+.box4th button:hover {
+  background-color: #fff;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modall {
+  display: none;
+  position: fixed;
+  top: 77.5%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  width: 375px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+.modall-header {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: #000;
+  text-align: center;
+  font-size: large;
+}
+.modall-body {
+  max-height: 200px;
+  overflow-y: auto;
+  direction: rtl;
+  text-align: right;
+}
+.modall-footer {
+  text-align: center;
+  padding-top: 10px;
+}
+.close-btn {
+  cursor: pointer;
+  color: #9351cc;
+}
+.host-list li {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+.host-list li:hover {
+  background: #f0f0f0;
+  cursor: pointer;
+}
+.host-list {
+  max-height: 150px; /* می‌توانید این مقدار را تغییر دهید */
+  overflow-y: scroll;
+  padding: 5px 30px;
+  font-weight: normal;
+}
+.edit-host {
+  height: 430px;
+  width: 800px;
+  display: none;
+  position: fixed;
+  top: -40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #9351cc;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-family: "dana";
+  font-weight: bold;
+  font-size: large;
+}
+.edit-host__header {
+  color: #fff;
+  border-bottom: solid 1px #fff;
+  height: 30px;
+}
+.ram-increase {
+  height: 200px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 15px;
+}
+.ram-increase__text {
+  height: 30px;
+  color: #fff;
+  margin-top: 15px;
+}
+.ram-increase__box {
+  height: 170px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.ram-increase__bix {
+  height: 160px;
+  width: 140px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.bix1 {
+  height: 60px;
+  text-align: center;
+  color: #9351cc;
+  margin-top: 20px;
+  border-bottom: 1px solid #707070;
+}
+.bix11 {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ram-increase__button {
+  height: 30px;
+  width: 70px;
+  background-color: #9351cc;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 800;
+  font-family: "dana";
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.ram-increase__button:hover {
+  background-color: #a366d9;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(147, 81, 204, 0.3);
+  cursor: pointer;
+}
+
+.ram-increase__button:active {
+  transform: scale(0.98);
+}
+
+.traffic-usage__text {
+  color: #fff;
+}
+.traffic-usage__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.traffic-usage__button {
+  height: 60px;
+  width: 350px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #707070;
+  font-family: "dana";
+  font-weight: bold;
+  font-size: large;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.traffic-usage__button:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 81, 204, 0.2);
+  border-color: #9351cc;
+  color: #9351cc;
+  cursor: pointer;
+}
+
+.traffic-usage__button:active {
+  transform: translateY(0);
+}
+
+input[type="file"] {
+  display: none;
+}
+label {
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 0.625em;
+  height: 70px;
+  width: 30%;
+  background-color: #fff;
+  color: #7f7f7f;
+  border-radius: 5px;
+  font-family: "dana";
+  font-weight: 600;
+  font-size: medium;
+  margin: 0 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-box input[type="number"] {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: "dana";
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  width: 100%;
+}
+
+.input-box input[type="number"]:invalid {
+  color: #ff4444;
+  border-bottom: 2px solid #ff4444;
+}
+
+.input-box input[type="number"]:focus {
+  border-bottom: 2px solid #9351cc;
+}
+
+.input-box input[type="number"]::-webkit-inner-spin-button,
+.input-box input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box input[type="number"] {
+  -moz-appearance: textfield;
+}

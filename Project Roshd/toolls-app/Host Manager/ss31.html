@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="ss31.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <!-- Persian Date & Datepicker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-date/dist/persian-date.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+  </head>
+  <body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+          <a href="#">
+            <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span><span class="icon-text">رخداد ها</span>
+          </a>
+        </div>
+        <div id="main">
+          <!-- محتویات اصلی -->
+        </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+        <div class="left">
+            <div class="b1">
+              <div class="b11">
+                <span title="جستجو کردن"
+                  ><div class="b111"><img src="search.png" alt="" /></div
+                ></span>
+                <div class="b112">
+                  <form id="form">
+                    <input
+                      type="search"
+                      id="query"
+                      name="q"
+                      placeholder="جستجو کن...."
+                      &gt;
+                    />
+                  </form>
+                </div>
+              </div>
+              <div class="b12">
+                <div class="b121">
+                 <span title="خروج"> <img src="exit.png" alt="" />
+                  <div id="exit-modal" class="modal"></span>
+                    <div id="modal-content">
+                      <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                      <button id="confirm-exit">بله</button>
+                      <button id="cancel-exit">خیر</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="b122">
+                 <span title="اعلان ها"> <img src="notifications.png" alt="" />
+                  <div id="notification-popup" class="notification-modal"></span>
+                    <div class="notification-content">
+                      <h3>اعلان‌ها</h3>
+                      <ul id="notifications-list">
+                        <li>اعلان شماره ۱</li>
+                        <li>هاست شما تغییر کرد</li>
+                        <li>اعلان شماره ۳</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    <section id="main-box">
+      <div class="main-box__header"><div class="main-box__header__text">وضعیت هاست ها</div></div>
+      <div class="main-box__content">
+        <div class="box1">
+          <div class="box__right">
+            <div class="box__right__box"><input type="text" id="customerName" class="box__right__input" placeholder="نام مشتری:"></div>
+            <div class="box__right__box"><input type="url" id="website" class="box__right__input" placeholder=" وب سایت:"></div>
+            <div class="box__right__box"><input type="text" id="registerDate" class="box__right__input persian-date" placeholder="تاریخ ثبت سرویس:">
+            </div>
+            <div class="box__right__box"><input type="file" id="upload--btn">
+              <label for="upload--btn"><img src="create (2).png" alt="" class="left-area__2nd__Rbox__button__img1">مشاهده فایل</label>
+            </div>
+            <div class="box__right__box"><input type="text" id="expiryDate" class="box__right__input persian-date" placeholder="تاریخ انقضا سرویس:"></div>
+            <div class="box__right__box"><input type="text" id="ipAddress"  class="box__right__input" placeholder="آدرس IP:"></div>
+        </div>
+        <div class="box__center">
+            <div class="box__center__box"><button id="renewService"> تمدید سرویس</button></div>
+            <div class="box__center__box"><button id="cancelService">لغو سرویس</button></div>
+        </div>
+        
+        <div id="renew-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از تمدید سرویس اطمینان دارید؟</p>
+                <button id="confirm-renew">بله</button>
+                <button id="cancel-renew">خیر</button>
+            </div>
+        </div>
+        
+        <div id="cancel-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از لغو سرویس اطمینان دارید؟</p>
+                <button id="confirm-cancel">بله</button>
+                <button id="cancel-cancel">خیر</button>
+            </div>
+        </div>
+          <div class="box__left">
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">حجم مصرفی</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-1">74%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle  class="circle1"cx="57" cy="57" r="46" stroke-linecap="round" id="circle-1"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">وضعیت رم</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-2">50%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle2" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-2"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">روز باقیمانده</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-3">94%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle3" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-3"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">22روز/360روز</p>
+            </div>
+          </div>          
+        </div>
+        <div class="box2" id="box2">
+          <div class="box__right">
+            <div class="box__right__box"><input type="text" id="customerName" class="box__right__input" placeholder="نام مشتری:"></div>
+            <div class="box__right__box"><input type="url" id="website" class="box__right__input" placeholder=" وب سایت:"></div>
+            <div class="box__right__box"><input type="text" id="registerDate" class="box__right__input persian-date" placeholder="تاریخ ثبت سرویس:"></div>
+            <div class="box__right__box"><input type="file" id="upload--btn">
+              <label for="upload--btn"><img src="create (2).png" alt="" class="left-area__2nd__Rbox__button__img1">مشاهده فایل</label>
+            </div>
+            <div class="box__right__box"><input type="text" id="expiryDate" class="box__right__input persian-date" placeholder="تاریخ انقضا سرویس:"></div>
+            <div class="box__right__box"><input type="text" id="ipAddress"  class="box__right__input" placeholder="آدرس IP:"></div>
+        </div>
+          <div class="box__center">
+            <div class="box__center__box"><button id="renewService2"> تمدید سرویس</button></div>
+            <div class="box__center__box"><button id="cancelService2">لغو سرویس</button></div>
+        </div>
+        
+        <div id="renew-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از تمدید سرویس اطمینان دارید؟</p>
+                <button id="confirm-renew">بله</button>
+                <button id="cancel-renew">خیر</button>
+            </div>
+        </div>
+        
+        <div id="cancel-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از لغو سرویس اطمینان دارید؟</p>
+                <button id="confirm-cancel">بله</button>
+                <button id="cancel-cancel">خیر</button>
+            </div>
+        </div>
+          <div class="box__left">
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">حجم مصرفی</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-1">74%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle  class="circle1"cx="57" cy="57" r="46" stroke-linecap="round" id="circle-1"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">وضعیت رم</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-2">50%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle2" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-2"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">روز باقیمانده</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-3">94%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle3" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-3"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">22روز/360روز</p>
+            </div>
+          </div>
+        </div>
+        <div class="box3" id="box3">
+          <div class="box__right">
+            <div class="box__right__box"><input type="text" id="customerName" class="box__right__input" placeholder="نام مشتری:"></div>
+            <div class="box__right__box"><input type="url" id="website" class="box__right__input" placeholder=" وب سایت:"></div>
+            <div class="box__right__box"><input type="text" id="registerDate" class="box__right__input persian-date" placeholder="تاریخ ثبت سرویس:"></div>
+            <div class="box__right__box"><input type="file" id="upload--btn">
+              <label for="upload--btn"><img src="create (2).png" alt="" class="left-area__2nd__Rbox__button__img1">مشاهده فایل</label>
+            </div>
+            <div class="box__right__box"><input type="text" id="expiryDate" class="box__right__input persian-date" placeholder="تاریخ انقضا سرویس:"></div>
+            <div class="box__right__box"><input type="text" id="ipAddress"  class="box__right__input" placeholder="آدرس IP:"></div>
+        </div>
+          <div class="box__center">
+            <div class="box__center__box"><button id="renewService3"> تمدید سرویس</button></div>
+            <div class="box__center__box"><button id="cancelService3">لغو سرویس</button></div>
+        </div>
+        
+        <div id="renew-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از تمدید سرویس اطمینان دارید؟</p>
+                <button id="confirm-renew">بله</button>
+                <button id="cancel-renew">خیر</button>
+            </div>
+        </div>
+        
+        <div id="cancel-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از لغو سرویس اطمینان دارید؟</p>
+                <button id="confirm-cancel">بله</button>
+                <button id="cancel-cancel">خیر</button>
+            </div>
+        </div>
+          <div class="box__left">
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">حجم مصرفی</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-1">74%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle  class="circle1"cx="57" cy="57" r="46" stroke-linecap="round" id="circle-1"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">وضعیت رم</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-2">50%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle2" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-2"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">روز باقیمانده</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-3">94%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle3" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-3"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">22روز/360روز</p>
+            </div>
+          </div>
+        </div>
+        <div class="box4" id="box4">
+          <div class="box__right">
+            <div class="box__right__box"><input type="text" id="customerName" class="box__right__input" placeholder="نام مشتری:"></div>
+            <div class="box__right__box"><input type="url" id="website" class="box__right__input" placeholder=" وب سایت:"></div>
+            <div class="box__right__box"><input type="text" id="registerDate" class="box__right__input persian-date" placeholder="تاریخ ثبت سرویس:"></div>
+            <div class="box__right__box"><input type="file" id="upload--btn">
+              <label for="upload--btn"><img src="create (2).png" alt="" class="left-area__2nd__Rbox__button__img1">مشاهده فایل</label>
+            </div>
+            <div class="box__right__box"><input type="text" id="expiryDate" class="box__right__input persian-date" placeholder="تاریخ انقضا سرویس:"></div>
+            <div class="box__right__box"><input type="text" id="ipAddress"  class="box__right__input" placeholder="آدرس IP:"></div>
+        </div>
+          <div class="box__center">
+            <div class="box__center__box"><button id="renewService4"> تمدید سرویس</button></div>
+            <div class="box__center__box"><button id="cancelService4">لغو سرویس</button></div>
+        </div>
+        
+        <div id="renew-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از تمدید سرویس اطمینان دارید؟</p>
+                <button id="confirm-renew">بله</button>
+                <button id="cancel-renew">خیر</button>
+            </div>
+        </div>
+        
+        <div id="cancel-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از لغو سرویس اطمینان دارید؟</p>
+                <button id="confirm-cancel">بله</button>
+                <button id="cancel-cancel">خیر</button>
+            </div>
+        </div>
+          <div class="box__left">
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">حجم مصرفی</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-1">74%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle  class="circle1"cx="57" cy="57" r="46" stroke-linecap="round" id="circle-1"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">وضعیت رم</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-2">50%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle2" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-2"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">روز باقیمانده</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-3">94%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle3" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-3"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">22روز/360روز</p>
+            </div>
+          </div>
+        </div>
+        <div class="box5" id="box5">
+          <div class="box__right">
+            <div class="box__right__box"><input type="text" id="customerName" class="box__right__input" placeholder="نام مشتری:"></div>
+            <div class="box__right__box"><input type="url" id="website" class="box__right__input" placeholder=" وب سایت:"></div>
+            <div class="box__right__box"><input type="text" id="registerDate" class="box__right__input persian-date" placeholder="تاریخ ثبت سرویس:"></div>
+            <div class="box__right__box"><input type="file" id="upload--btn">
+              <label for="upload--btn"><img src="create (2).png" alt="" class="left-area__2nd__Rbox__button__img1">مشاهده فایل</label>
+            </div>
+            <div class="box__right__box"><input type="text" id="expiryDate" class="box__right__input persian-date" placeholder="تاریخ انقضا سرویس:"></div>
+            <div class="box__right__box"><input type="text" id="ipAddress"  class="box__right__input" placeholder="آدرس IP:"></div>
+        </div>
+          <div class="box__center">
+            <div class="box__center__box"><button id="renewService5"> تمدید سرویس</button></div>
+            <div class="box__center__box"><button id="cancelService5">لغو سرویس</button></div>
+        </div>
+        
+        <div id="renew-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از تمدید سرویس اطمینان دارید؟</p>
+                <button id="confirm-renew">بله</button>
+                <button id="cancel-renew">خیر</button>
+            </div>
+        </div>
+        
+        <div id="cancel-modal" class="modal">
+            <div id="modal-content">
+                <p>آیا از لغو سرویس اطمینان دارید؟</p>
+                <button id="confirm-cancel">بله</button>
+                <button id="cancel-cancel">خیر</button>
+            </div>
+        </div>
+          <div class="box__left">
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">حجم مصرفی</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-1">74%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle  class="circle1"cx="57" cy="57" r="46" stroke-linecap="round" id="circle-1"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">وضعیت رم</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-2">50%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle2" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-2"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">8GB/5.8GB</p>
+            </div>
+            <div class="chart-box">
+              <div class="chart-box__title">
+                <h4 class="chart-box__title-h4">روز باقیمانده</h4>    
+              </div>  
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-3">94%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle3" cx="57" cy="57" r="46" stroke-linecap="round" id="circle-3"/>
+                </svg>
+              </div>
+              <p class="chart-box__values-text">22روز/360روز</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="ss31.js"></script>   
+  </body>
+</html>

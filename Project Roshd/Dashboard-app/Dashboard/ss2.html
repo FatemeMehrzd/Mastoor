@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="ss2.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   
+  </head>
+  <body>
+    <div class="Main">
+        <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+          <a href="#">
+            <span title="خانه"><div class="icon1"><img src="home.png" alt="" class="material-icons"></div></span><span class="icon-text">خانه</span>
+          </a><br>
+          <a href="#">
+            <span title="مدیریت هاست"><div class="icon1"><img src="Host.png" alt="" class="material-icons"></div></span><span class="icon-text">مدیریت هاست</span>
+          </a><br>
+          <a href="#">
+            <span title="ابزارها"> <div class="icon1"><img src="setting.png" alt="" class="material-icons"></div></span><span class="icon-text">ابزار ها</span>
+          </a><br>
+            <a href="#" id="rokhdad-link">
+              <span title="رخدادها"><div class="icon1"><img src="rokhdad.png" alt="" class="material-icons"></div></span>
+              <span class="icon-text">رخدادها</span>
+          </a>
+          <div class="submenu" id="rokhdad-submenu">
+              <a href="ss5.html" class="submenu-item" data-type="خطاها">
+                  <span class="circle"></span> خطاها
+              </a>
+              <a href="ss51.html" class="submenu-item" data-type="ترافیک سیستم">
+                  <span class="circle"></span> ترافیک سیستم
+              </a>
+              <a href="ss52.html" class="submenu-item" data-type="امنیتی">
+                  <span class="circle"></span> امنیتی
+              </a>
+          </div>
+        </div>
+        <div id="main">
+          <!-- محتویات اصلی -->
+        </div>
+        <div class="right5"></div>
+        <div class="right6"></div>
+      <div class="left">
+        <div class="b1">
+          <div class="b11">
+            <span title="جستجو کردن"
+              ><div class="b111"><img src="search.png" alt="" /></div
+            ></span>
+            <div class="b112">
+              <form id="form">
+                <input
+                  type="search"
+                  id="query"
+                  name="q"
+                  placeholder="جستجو کن...."
+                  &gt;
+                />
+              </form>
+            </div>
+          </div>
+          <div class="b12">
+            <div class="b121">
+             <span title="خروج"> <img src="exit.png" alt="" />
+              <div id="exit-modal" class="modal"></span>
+                <div id="modal-content">
+                  <p>آیا مطمئن هستید که می‌خواهید خارج شوید؟</p>
+                  <button id="confirm-exit">بله</button>
+                  <button id="cancel-exit">خیر</button>
+                </div>
+              </div>
+            </div>
+            <div class="b122">
+             <span title="اعلان ها"> <img src="notifications.png" alt="" />
+              <div id="notification-popup" class="notification-modal"></span>
+                <div class="notification-content">
+                  <h3>اعلان‌ها</h3>
+                  <ul id="notifications-list">
+                    <!-- لیست اعلان‌ها در اینجا قرار می‌گیرند -->
+                    <li>اعلان شماره ۱</li>
+                    <li>هاست شما تغییر کرد</li>
+                    <li>اعلان شماره ۳</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="b2">
+          <div class="b21">
+            <div class="b211">وضعیت سیستم</div>
+            <div class="b212">
+              <div class="chart-box__round-chart">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number-1">74%</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="7em" height="7em">
+                  <defs>
+                    <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#DA22FF"/>
+                      <stop offset="100%" stop-color="#9733EE"/>
+                    </linearGradient>
+                  </defs>
+                  <circle  class="circle1"cx="57" cy="57" r="46" stroke-linecap="round" id="circle-1"/>
+                </svg>
+              </div>
+            </div>
+            <div class="b213">
+              <div class="circle22"></div>
+              <div class="b2132">حافظه موقت</div>
+              <div class="circle11"></div>
+              <div class="b2134">پردازنده</div>
+            </div>
+          </div>
+          <div class="b22">
+            <div class="chart-container">
+              <canvas id="myChart"></canvas>
+            </div>
+            
+          </div>
+        </div>
+        <div class="b3">
+          <div class="b31">
+            <div class="b311">
+              <p class="pb311">هاست ها</p>
+              <p class="pb312"><a href="#">مشاهده بیشتر...</a></p>
+            </div>
+            <div class="b312">...</div>
+            <div class="b313">
+              <span title="هاست ها"><img src="Hostt.png" alt="" />
+            </div></span>
+          </div>
+          <div class="b32">
+            <div class="b321">
+              <p class="pb321">کاربران</p>
+              <p class="pb322"><a href="#">مشاهده بیشتر...</a></p>
+            </div>
+            <div class="b322">...</div>
+            <div class="b323">
+              <span title="کاربران"><img src="people.png" alt="" />
+            </div></span>
+          </div>
+          <div class="b33">
+            <div class="b331">
+              <p class="pb331">وب سایت ها</p>
+              <p class="pb332"><a href="#">مشاهده بیشتر...</a></p>
+            </div>
+            <div class="b332">...</div>
+            <div class="b333">
+             <span title="وب سایت ها"><img src="world.png" alt="" />
+            </div></span>
+          </div>
+        </div>
+        <div class="b4">
+          <div class="b41">
+            <p class="b411">گزارشات:</p>
+            <button onclick="exportTableToExcel('table')"class="b412">خروجی</button>
+            <button type="submit" class="b413"onclick="openModal()">فیلتر کردن</button>
+          </div>
+          <div class="b42">
+            <div class="b421">
+              <table id="table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>شماره</th>
+                    <th>ادرس ایپی</th>
+                    <th>تاریخ</th>
+                    <th>ساعت</th>
+                    <th>وضعیت</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>1</td>
+                    <td></td>
+                    <td>25.06.1395</td>
+                    <td>22:00</td>
+                    <td>فعال</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>2</td>
+                    <td></td>
+                    <td>25.06.1370</td>
+                    <td>04:30</td>
+                    <td>فعال</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>3</td>
+                    <td></td>
+                    <td>25.06.1350</td>
+                    <td>23:05</td>
+                    <td>غیر فعال</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>4</td>
+                    <td></td>
+                    <td>25.06.1360</td>
+                    <td>18:10</td>
+                    <td>فعال</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td>13:03</td>
+                    <td>غیر فعال</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>6</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>7</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="checkbox">
+                        <input type="checkbox" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </td>
+                    <td>8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="hostModal" class="modall">
+      <div class="modal-content">
+        <div class="modal-content__header">
+          <div class="information"><h2>فیلتر ها:</h2></div>
+          <button class="information1" onclick="resetTable()">
+            <h2>حذف فیلتر ها</h2>
+          </button>          
+        </div>
+        <div class="filter-container">
+          <div class="filter-item" onclick="sortTable('date')">
+            تاریخ <img id="icon-date" class="sort-icon" src="arrows_16020115.png" />
+          </div>
+          <div class="filter-item" onclick="sortTable('time')">
+            ساعت <img id="icon-time" class="sort-icon" src="arrows_16020115.png" />
+          </div>
+          <div class="filter-item" onclick="sortTable('status')">
+            وضعیت <img id="icon-status" class="sort-icon" src="arrows_16020115.png" />
+          </div>
+        </div>
+          <div class="footer">
+            <button class="footer__button" onclick="closemodal()">لغو</button>
+          </div>
+      </div>
+    </div>
+    <script src="ss2.js"></script>
+  </body>
+</html>

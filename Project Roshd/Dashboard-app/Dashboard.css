@@ -1,0 +1,455 @@
+@font-face {
+  font-family: "Dana";
+  src: url("/fonts/Dana.woff2") format("woff2"),
+    url("/fonts/Dana.woff") format("woff"),
+    url("/fonts/Dana.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Dana", "Tahoma", "Arial", sans-serif;
+  background-color: #5f5be0;
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #7e95df;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+/* Main container styles */
+.Main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  direction: rtl;
+  position: relative;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #fff;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Content area styles */
+#main {
+  flex: 1;
+  margin-right: 200px;
+  padding: 20px;
+  background-color: #fff;
+  min-height: 100vh;
+  border-radius: 20px 0 0 20px;
+}
+
+.left {
+  width: 100%;
+}
+
+.b1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.b2 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.b21,
+.b22 {
+  flex: 1;
+}
+
+.b3 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.b31,
+.b32,
+.b33 {
+  flex: 1;
+}
+
+.b4 {
+  width: 100%;
+}
+
+.b41 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.b421 {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+
+/* Card styles */
+.b21,
+.b22,
+.b31,
+.b32,
+.b33 {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Table styles */
+.b421 {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  overflow-x: auto;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* Button styles */
+button {
+  background-color: #5f5be0;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a47b3;
+}
+
+/* Form elements */
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Modal styles */
+.modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Keep existing responsive styles */
+@media screen and (max-width: 1200px) {
+  .b2 {
+    flex-direction: column;
+  }
+
+  .b21,
+  .b22 {
+    width: 100%;
+  }
+
+  .b3 {
+    flex-wrap: wrap;
+  }
+
+  .b31,
+  .b32,
+  .b33 {
+    width: calc(50% - 10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100% !important;
+    height: auto;
+    position: relative;
+  }
+
+  #main {
+    margin-right: 0;
+  }
+
+  .b31,
+  .b32,
+  .b33 {
+    width: 100%;
+  }
+
+  .b41 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .b412,
+  .b413 {
+    margin-top: 10px;
+  }
+
+  .b421 {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .b11 {
+    flex-direction: column;
+  }
+
+  .b112 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .b12 {
+    flex-direction: column;
+  }
+
+  .b121,
+  .b122 {
+    margin: 5px 0;
+  }
+
+  .chart-box__round-chart {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+/* Base styles for better responsiveness */
+.Main {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make sure modals are responsive */
+.modal-content {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+/* Ensure form elements are responsive */
+input,
+select,
+button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #5f5be0;
+}

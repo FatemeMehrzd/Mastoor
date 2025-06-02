@@ -1,0 +1,489 @@
+@font-face {
+  font-family: "Dana";
+  src: local("Dana"), url("/fonts/Dana.woff2") format("woff2"),
+    url("/fonts/Dana.woff") format("woff"),
+    url("/fonts/Dana.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base styles */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  background-color: #5f5be0;
+  font-family: "Dana", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.Main {
+  width: 100%;
+  display: flex;
+  direction: rtl;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1180px) {
+  .left {
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    min-width: 0;
+  }
+
+  .b1 {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .b11 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .b12 {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .b2 {
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .b21 {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
+
+  .b22 {
+    width: 100%;
+    margin-right: 0;
+    height: auto;
+  }
+
+  .b3 {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .b31,
+  .b32,
+  .b33 {
+    width: calc(33.33% - 20px);
+    margin: 0;
+    height: auto;
+  }
+
+  .b4 {
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+
+  .b41 {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .b421 {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Modal responsive styles */
+  #modal-content {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px;
+  }
+
+  .modal-buttons {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  #modal-content button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 66px !important;
+  }
+
+  #main {
+    margin-right: 66px;
+    width: calc(100% - 66px);
+  }
+
+  .b31,
+  .b32,
+  .b33 {
+    width: 100%;
+  }
+
+  .b1 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .b11,
+  .b12 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .b112 {
+    width: 100%;
+  }
+
+  .b313,
+  .b323,
+  .b333 {
+    width: 90px;
+  }
+
+  .b311,
+  .b321,
+  .b331 {
+    width: calc(100% - 140px);
+  }
+
+  /* Modal responsive styles for tablets */
+  #modal-content {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .modal-buttons {
+    gap: 15px;
+  }
+
+  #modal-content button {
+    padding: 8px 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .left {
+    padding: 15px;
+  }
+
+  .b21 {
+    height: auto;
+  }
+
+  .chart-box__round-chart {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .b411 {
+    font-size: large;
+  }
+
+  .b313,
+  .b323,
+  .b333 {
+    width: 70px;
+  }
+
+  .b311,
+  .b321,
+  .b331 {
+    width: calc(100% - 120px);
+  }
+
+  /* Modal responsive styles for mobile */
+  #modal-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  #modal-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #modal-content button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make sure modals are responsive */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: Dana, sans-serif;
+  min-width: 300px;
+}
+
+#modal-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: Dana, sans-serif;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#modal-content button {
+  margin: 0;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Dana, sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  gap: 10px;
+}
+
+#confirm-exit {
+  background-color: #5f5be0;
+  color: white;
+  font-family: Dana, sans-serif;
+}
+
+#cancel-exit {
+  background-color: #e0e0e0;
+  color: #333;
+  font-family: Dana, sans-serif;
+}
+
+#confirm-exit:hover {
+  background-color: #4a47b3;
+  transform: translateY(-1px);
+}
+
+#cancel-exit:hover {
+  background-color: #9351cc;
+  transform: translateY(-1px);
+}
+
+#confirm-exit:active,
+#cancel-exit:active {
+  transform: translateY(1px);
+}
+
+/* Ensure form elements are responsive */
+input,
+select,
+button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Keep existing styles */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #7e95df;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
